@@ -24,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <div className="w-full mb-6 text-2xl font-bold">PropAdda</div>
         {children}
       </body>
     </html>
