@@ -139,7 +139,7 @@ const ProductsPage = () => {
         )}
 
         {/* New Subcategory Input */}
-        {subCategory === null && isNewSubCategory && category.id && (
+        {subCategory === null && isNewSubCategory && category?.id && (
           <div className="space-y-2">
             <input
               type="text"
