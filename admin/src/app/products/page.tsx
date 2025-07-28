@@ -10,6 +10,7 @@ import { uploadToGCS } from "../utils/GCPUploader";
 
 const ProductsPage = () => {
   const [category, setCategory] = useState<Category | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [categories, setCategories] = useState<Category[]>([]);
   const [subCategories, setSubCategories] = useState<SubCategory[]>([]);
   const [subCategory, setSubCategory] = useState<SubCategory | null>(null);
@@ -230,10 +231,11 @@ const ProductsPage = () => {
         {/* Submit */}
         <button
           type="submit"
-          disabled={products.length === 0}
+          disabled={products.length === 0 || isSubmitting}
           className="w-full py-2 bg-green-600 text-white rounded-md hover:bg-green-700 disabled:opacity-50 transition disabled:cursor-not-allowed"
           onClick={(e) => {
             e.preventDefault();
+            setIsSubmitting(true);
             handleSubmit();
           }}
         >

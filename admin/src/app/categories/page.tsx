@@ -11,6 +11,7 @@ const CategoriesPage = () => {
   const [categoryName, setCategoryName] = useState("");
   const [coverUrl, setCoverUrl] = useState("");
   const [categories, setCategories] = useState<Category[]>([]);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   useEffect(() => {
     // Fetch existing categories from the database
 
@@ -41,6 +42,7 @@ const CategoriesPage = () => {
       <form
         onSubmit={(e) => {
           e.preventDefault();
+          setIsSubmitting(true);
           const formData = new FormData();
           formData.append("name", categoryName);
           formData.append("cover", coverUrl);
@@ -85,6 +87,7 @@ const CategoriesPage = () => {
 
         <button
           type="submit"
+          disabled={!categoryName || !coverUrl || !isSubmitting}
           className="w-full bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition"
         >
           Submit
