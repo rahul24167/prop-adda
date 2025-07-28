@@ -5,7 +5,10 @@ import { SubCategory } from "@prisma/client";
 export const createSubCategory = async (subCategory: SubCategory) => {
   try {
     const newSubCategory = await prisma.subCategory.create({
-      data: subCategory,
+      data: {
+        name: subCategory.name,
+        categoryId: subCategory.categoryId,
+      }
     });
     if (!newSubCategory) {
       return { status: 500, message: "Failed to create subcategory" };
