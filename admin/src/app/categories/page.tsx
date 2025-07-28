@@ -88,7 +88,7 @@ const CategoriesPage = () => {
         <button
           type="submit"
           disabled={!categoryName || !coverUrl || !isSubmitting}
-          className="w-full bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition"
+          className="w-full bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition disabled:opacity-50 disabled:cursor-not-allowed" 
         >
           Submit
         </button>
