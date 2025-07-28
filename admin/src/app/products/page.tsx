@@ -8,7 +8,6 @@ import { createSubCategory } from "../actions/createSubCategory";
 import { addProducts } from "../actions/addProduct";
 import { uploadToGCS } from "../utils/GCPUploader";
 
-
 const ProductsPage = () => {
   const [category, setCategory] = useState<Category | null>(null);
   const [categories, setCategories] = useState<Category[]>([]);
@@ -50,11 +49,11 @@ const ProductsPage = () => {
         });
     }
   }, [category]);
-  useEffect(()=>{
+  useEffect(() => {
     setProducts([]); // Reset products when category changes
     setSubCategory(null); // Reset subcategory when category changes
     setIsNewSubCategory(false); // Reset new subcategory state
-  },[category]);
+  }, [category]);
   useEffect(() => {
     if (subCategory) {
       setIsNewSubCategory(false);
@@ -76,7 +75,6 @@ const ProductsPage = () => {
         setCategory(null); // Reset category selection
         setSubCategory(null); // Reset subcategory selection
         setIsNewSubCategory(false); // Reset new subcategory state
-        
       }
     });
   };
@@ -124,7 +122,7 @@ const ProductsPage = () => {
                 setSubCategory(
                   subCategories.find(
                     (subCat) => subCat.name === e.target.value
-                  )
+                  ) || null
                 );
               }}
               className="w-full px-4 py-2 border rounded-md"
