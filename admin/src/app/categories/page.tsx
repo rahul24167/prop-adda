@@ -98,6 +98,7 @@ const CategoriesPage = () => {
           height={500}
           alt="Cover Image"
           className="rounded-lg shadow"
+          unoptimized
         />
       )}
     </div>

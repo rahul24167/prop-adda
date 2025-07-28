@@ -1,12 +1,12 @@
 "use server";
-import { prisma } from "@/src/lib/prisma"
-import { Category } from "@prisma/client";
+import { prisma } from "@/src/lib/prisma";
 
-export const getCategories = async (): Promise<Category[]> => {
-  const categories = await prisma.category.findMany();
-    if (!categories) {
-        console.error("No categories found");
-        return [];
-    }
-  return categories;
+export const getCategories = async () => {
+  try {
+    const categories = await prisma.category.findMany();
+    return categories;
+  } catch (error) {
+    console.error("Error fetching categories:", error);
+    throw new Error("Failed to fetch categories");
+  }
 };

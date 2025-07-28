@@ -1,10 +1,9 @@
+export const dynamic = "force-dynamic";
 import { getCategories } from "../app/actions/getCategories";
 import CategoryCard from "./components/categoryCard";
 
 export default async function Home() {
   const categories = await getCategories();
- 
-
   return (
     
     <div className="p-6">

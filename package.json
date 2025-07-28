@@ -5,8 +5,8 @@
   "scripts": {
     "dev:admin": "cd admin && next dev --turbopack",
     "dev:app": "next dev --turbopack",
-    "build:admin": "npx prisma generate && cd admin && next build",
-    "build:app": "npx prisma generate && next build",
+    "build:admin": "cd admin && next build",
+    "build:app": "next build",
     "start:admin": "cd admin && next start",
     "start:app": "next start",
     "lint:app": "next lint"

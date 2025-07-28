@@ -18,6 +18,7 @@ const CategoryCard = ({ category }: { category: Category }) => {
         alt={category.name}
         fill
         className="object-cover transition-transform duration-500 group-hover:scale-110"
+        unoptimized
       />
 
       {/* Overlay with category name */}

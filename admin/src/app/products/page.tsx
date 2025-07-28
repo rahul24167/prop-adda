@@ -240,6 +240,7 @@ const ProductsPage = () => {
               fill
               className="relative h-auto w-auto max-h-60 max-w-full rounded-md border object-contain"
               sizes="(max-width: 256px) 100vw, 256px"
+              unoptimized
             />
           </div>
         </div>
